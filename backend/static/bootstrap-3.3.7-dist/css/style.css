@@ -1,0 +1,166 @@
+:root {
+    --orange: hsl(25deg 100% 50%);
+    --pink: hsl(331deg 93% 48%);
+    --light-orange: hsl(25deg 100% 50% / 25%);
+    --deepskyblue: hsl(195deg 100% 50% / 25%);
+    --lightskyblue: hsl(203deg 92% 75% / 25%);
+}
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    height: 70px;
+}
+
+.text-blue {
+    color: blue;
+}
+
+#logo {
+    background: -moz-linear-gradient(to top, var(--pink), var(--orange));
+    background: -webkit-linear-gradient(to top, var(--pink), var(--orange));
+    background: linear-gradient(to top, var(--pink), var(--orange));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section {
+    height: calc(100vh - 100px);
+    overflow: hidden auto;
+}
+
+#forms {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+form {
+    border-radius: 20px;
+    grid-area: 1 / 1 / 2 / 2;
+    box-shadow: 0 0 20px 5px rgb(0 0 0 / 15%);
+    transform: translateX(150%);
+}
+
+input.form-control {
+    padding-left: 30px;
+    position: relative;
+}
+
+input.form-control~span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 8px;
+}
+
+input.form-control:focus {
+    box-shadow: 0 0 0 0.25rem var(--light-orange) !important;
+    border-color: var(--light-orange) !important;
+}
+
+input.form-control:focus~span {
+    color: var(--orange) !important;
+    opacity: .6;
+}
+
+.btn-pink {
+    /* background: var(--pink); */
+    border: none !important;
+    background: linear-gradient( 45deg, var(--deepskyblue), var(--lightskyblue));
+}
+
+.btn-blue{
+    background: var(--lightskyblue);
+    border: none !important;
+    background: linear-gradient( 45deg, var(--deepskyblue), var(--lightskyblue));
+}
+
+.btn-blue:hover {
+    opacity: .8;
+}
+
+
+.btn-pink:hover {
+    opacity: .8;
+}
+
+.redes i {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.redes i:hover {
+    background: #ececec;
+}
+
+label.error {
+    color: #dc3545;
+    position: absolute;
+    font-size: small;
+}
+
+footer {
+    height: 30px;
+}
+
+
+/* -------------------------- Animations -------------------------- */
+
+#svg {
+    animation: 3s linear infinite alternate svg;
+}
+
+@keyframes svg {
+    from {
+        transform: translateY(-5%) scale(.9);
+    }
+    to {
+        transform: translateY(5%) scale(.9);
+    }
+}
+
+.show {
+    animation: 1s ease show;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.hide {
+    animation: 1s ease hide;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hide {
+    from {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+}

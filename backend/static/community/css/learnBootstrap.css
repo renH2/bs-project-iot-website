@@ -1,0 +1,36 @@
+#targets_ > p > a {
+    margin-top:1%;
+    margin-right:1%;
+}
+body{
+    background-color: #F6F9FA;
+}
+.bottom-tools {
+    position: fixed;
+    text-align: center;
+}
+.btn-clicked {
+    background-color: #00A1D6;
+    color: #FFFFFF;
+}
+.btn-group-vertical>a:focus{
+    outline: none;
+}
+.btn-group-vertical>div:hover, .btn-group-vertical>a>div:hover{
+    background-color: #00A1D6;
+    color: #FFFFFF;
+}
+.btn-group-vertical>div ,.btn-group-vertical>a>div{
+    width: 50px;
+    height: 50px;
+    color: #00A1D6;
+    background-color: #F6F9FA;
+    border: 1px solid #e5e9ef;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: xx-large;
+    border-radius: 12%;
+}
+.btn-group-vertical>div>span {
+    line-height: 47px;
+}

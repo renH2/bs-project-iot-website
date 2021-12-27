@@ -1,0 +1,111 @@
+			body {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				font-family: Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", SimSun, 宋体, sans-serif;
+				font-size: 18px;
+				line-height: 28px;
+				color: #333;
+				background: #FFFFFF;
+			}
+			
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			
+			section {
+				width: 80%;
+				height: 70%;
+				position: absolute;
+				margin: auto;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				border: 5px solid #222;
+				border-radius: 20px;
+				background-color: #3399FF;
+			}
+			
+			form {
+				color: #fff;
+				padding: 30px;
+			}
+			
+			.progress {
+				font-size: 14px;
+			}
+			
+			.answer {
+				font-size: 16px;
+				color: #333;
+				height: 40px;
+				line-height: 40px;
+				border: 3px solid #222;
+				border-radius: 10px;
+				background-color: #FFFFFF;
+				padding: 0 14px;
+				margin: 15px;
+			}
+			
+			.answer:hover {
+				background-color: #12bdf1;
+				padding: 0 14px;
+				margin: 15px;
+			}
+			
+			button {
+				position:relative;
+				
+				height: 24px;
+				width: 96px;
+				border: none;
+				margin-top: 24px;
+			}			
+			#previous {
+				float: left;
+				background: url(../img/previous.png) no-repeat;
+				background-size: 96px 24px;
+			}
+			
+			#next {
+				float: right;
+				background: url(../img/next.png) no-repeat;
+				background-size: 96px 24px;
+			}
+			
+			#previous:active,
+			#previous:hover {
+				float: left;
+				background: url(../img/previous-click.png) no-repeat;
+				background-size: 96px 24px;
+			}
+			
+			#next:active,
+			#next:hover {
+				float: right;
+				background: url(../img/next-click.png) no-repeat;
+				background-size: 96px 24px;
+			}			
+			img {
+				width: 50%;
+			}
+		button a{
+			position:absolute;
+			top:0;
+			right:0;
+			height: 24px;
+			width: 96px;
+		}
+			#submit {
+				float: right;
+				background: url(../img/submit.png) no-repeat;
+				background-size: 70px 24px;
+			}
+			#submit:active,
+			#submit:hover {
+				float: right;
+				background: url(../img/submit-click.png) no-repeat;
+				background-size: 70px 24px;
+			}	

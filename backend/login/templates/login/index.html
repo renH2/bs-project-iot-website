@@ -1,0 +1,137 @@
+{#{% extends 'base.html' %}#}
+{#{% block title %}主页{% endblock %}#}
+{#{% block content %}#}
+{#    {% if request.session.is_login %}#}
+{#    <h1>你好,{{ request.session.user_name }}！欢迎回来！</h1>#}
+{#    {% else %}#}
+{#    <h1>你尚未登录，只能访问公开内容！</h1>#}
+{#    {% endif %}#}
+{#{% endblock %}#}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <title>{% block title %}个人主页{% endblock %}</title>
+    {% block css %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Dmego Home">
+        <meta name="keywords" content="Dmego,Homepage">
+        <meta name="author" content="Dmego">
+        <link rel="stylesheet" type="text/css" href="{% static 'index/assets/css/onlinewebfonts.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'index/assets/css/vno.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'index/assets/css/iconfont.css' %}" />
+        <link rel="apple-touch-icon" href="{% static 'index/apple-touch-icon.png' %}" />
+        <link rel="icon" href="{% static 'index/favicon.ico' %}" />
+    {% endblock %}
+</head>
+
+<body>
+    {% if request.session.is_login %}
+    <span class="mobile btn-mobile-menu">
+        <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
+        <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
+    </span>
+    <header id="panel" class="panel-cover">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content">
+
+                    <!-- <a href="#" title="Dmego Home" class="profilepic">
+                        <img src="./img/logo2.jpg" width="80" alt="Dmego`s logo" class="js-avatar iUp show" />
+                    </a> -->
+                    <h1 class="panel-cover__title panel-title iUp">
+                        <a href="#" title="Dmego Home">欢迎，{{ request.session.user_name }}</a>
+                    </h1>
+                    <p class="panel-cover__subtitle panel-subtitle iUp">BS-Project IOT管理系统</p>
+                    <p class="panel-cover__subtitle panel-subtitle iUp">跳转至用户操作界面</p>
+                    <hr class="panel-cover__divider iUp" />
+
+                    <div class="navigation-wrapper iUp">
+                        <div>
+                            <nav class="cover-navigation cover-navigation--primary">
+                                <ul class="navigation">
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay cover-slate"></div>
+        </div>
+        <!-- <div class="beian iUp">
+            <a class="icp" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">XXX</a>
+            <a class="gwab" href="http://www.beian.gov.cn/portal/recordQuery" target="_blank">XXX</a>
+        </div> -->
+        <div class="remark iUp">
+            <p class="power">当前在线：
+                <a href="#" target="_blank"> {{ request.session.user_name }} </a>
+            </p>
+            <p class="power">&emsp;&emsp;
+
+            </p>
+            <p class="power">
+                <a href="/logout/" target="_blank"> 登出 </a>
+            </p>
+        </div>
+    </header>
+    <script type="text/javascript" src="{% static 'index/assets/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/js/fetch.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/js/main.js' %}"></script>
+    {% else %}
+        <span class="mobile btn-mobile-menu">
+        <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
+        <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
+    </span>
+    <header id="panel" class="panel-cover">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content">
+
+                    <!-- <a href="#" title="Dmego Home" class="profilepic">
+                        <img src="./img/logo2.jpg" width="80" alt="Dmego`s logo" class="js-avatar iUp show" />
+                    </a> -->
+                    <h1 class="panel-cover__title panel-title iUp">
+                        <a href="#" title="Dmego Home">您尚未登录，请前往登录页面</a>
+                    </h1>
+                    <p class="panel-cover__subtitle panel-subtitle iUp">BS-Project IOT管理系统</p>
+                    <hr class="panel-cover__divider iUp" />
+                </div>
+            </div>
+            <div class="panel-cover--overlay cover-slate"></div>
+        </div>
+        <!-- <div class="beian iUp">
+            <a class="icp" href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank">XXX</a>
+            <a class="gwab" href="http://www.beian.gov.cn/portal/recordQuery" target="_blank">XXX</a>
+        </div> -->
+        <div class="remark iUp">
+            <p class="power">
+                <a href="/login/" target="_blank"> 登录 </a>
+            </p>
+            <p class="power">&emsp;&emsp;
+
+            </p>
+            <p class="power">
+                <a href="/register/" target="_blank"> 注册 </a>
+            </p>
+        </div>
+    </header>
+    <script type="text/javascript" src="{% static 'index/assets/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/js/fetch.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'index/assets/js/main.js' %}"></script>
+    {% endif %}
+</body>
+
+</html>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L0GELWRT2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4L0GELWRT2');
+</script>

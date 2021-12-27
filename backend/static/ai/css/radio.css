@@ -1,0 +1,61 @@
+			form   
+        {   
+            width: 100vw;   
+            height: 100vh;   
+            display: flex;   
+            flex-flow: column wrap;   
+            justify-content: center;   
+            align-items: center;   
+        }   
+        form .frame   
+        {   
+            display: flex;   
+            flex-flow: row nowrap;   
+        }   
+        form .frame input   
+        {   
+            display: none;   
+        }   
+        form .frame label   
+        {   
+            cursor: pointer;   
+            position: relative;   
+            width: 30px;   
+            height: 30px;   
+            margin: 10px;   
+            background: #8ABA56;   
+            transition: all 0.3s ease-in-out;   
+            font-size: 12pt;   
+            color: #FFF;   
+            -webkit-font-smoothing: antialiased;   
+        }   
+        form .frame label.radio   
+        {   
+            border-radius: 100%;   
+        }   
+        form .frame label.check   
+        {   
+            border-radius: 5px;   
+        }   
+        form .frame label .fa   
+        {   
+            position: absolute;   
+            top: 0;   
+            left: 0;   
+            rightright: 0;   
+            bottombottom: 0;   
+            opacity: 0;   
+            -webkit-transform: scale(0);   
+            transition: all 0.3s ease-in-out;   
+            line-height: 30px;   
+            text-align: center;   
+        }   
+        form .frame input:checked + label   
+        {   
+            background: #678b40;   
+        }   
+        form .frame input:checked + label .fa   
+        {   
+            opacity: 1;   
+            -webkit-transform: scale(1);   
+        }  

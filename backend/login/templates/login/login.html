@@ -1,0 +1,72 @@
+{#{% extends 'base.html' %}#}
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>{% block title %}登录{% endblock %}</title>
+    {% block css %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+{#    <link href="{% static 'css/login.css' %}" rel="stylesheet"/>#}
+        <link rel="stylesheet" href="{% static 'bootstrap-3.3.7-dist/css/style.css' %}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    {% endblock %}
+</head>
+
+
+<body>
+    <header class="align-items-center d-flex">
+       {#   <h3 id="logo" class="display-6 fw-bold container-fluid m-0"><i class="fas fa-book"></i> LOGO</h3>#}
+        <h3  id="logo" class="display-6  container-fluid m-0"><i class="fa fa-plus-square"></i> BS PROJECT</h3>
+    </header>
+    <section class="align-items-center d-flex g-0 p-3 py-lg-0 row">
+        <div class="align-items-center col-lg-7 col-md-6 d-md-flex d-none h-100 p-2">
+            <img src="{% static 'img/iot.png' %}" id="svg" alt="imagen" class="w-100">
+        </div>
+        <div id="forms" class="align-items-center col-12 col-lg-5 col-md-6 justify-content-center p-0 position-relative">
+            <form id="logIn" action="/login/"  method="post" class="col-12 col-md-10 m-auto px-4 px-lg-5 py-4 show">
+                {% if message %}
+                  <div class="alert alert-warning">{{ message }}</div>
+              {% endif %}
+                {% csrf_token %}
+                <h3 class="fw-bold p-2 text-center">欢迎登录</h3>
+                <div class="col-12 py-2 position-relative mt-2">
+                    <div class="form-group">
+                        {{ login_form.username.label_tag }}
+                        {{ login_form.username}}
+                    </div>
+                </div>
+                <div class="col-12 py-2 position-relative mt-2">
+                                  <div class="form-group">
+                  {{ login_form.password.label_tag }}
+                  {{ login_form.password }}
+              </div>
+                </div>
+                                <div class="col-12 py-2 position-relative mt-2">
+              <div class="form-group">
+                  {{ login_form.captcha.errors }}
+                  {{ login_form.captcha.label_tag }}
+                  {{ login_form.captcha }}
+              </div>
+                </div>
+                <div class="col-12 py-2">
+                    <button type="submit" class="btn text-white w-100 btn-pink">登录</button>
+                </div>
+                <div class="col-12 py-2">
+                    <p class="m-0 small text-center">没有账号？ <a href="/register/" class="btn-signIn">点击注册</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="align-items-center bg-dark d-flex justify-content-center small w-100">
+        <p class="m-0 small text-white-50">
+            Copyright © ZJU 2021
+        </p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+{#    </div> <!-- /container -->#}
+{#{% endblock %}#}
+</body>
